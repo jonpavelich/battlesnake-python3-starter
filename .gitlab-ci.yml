@@ -1,14 +1,20 @@
 before_script:
-  #- apt-get update -qy
-  #- apt-get install -y ruby-dev
   - gem install dpl
 
 stages:
-  - deploy
+  - deploy-develop
+  - deploy-production
 
-deploy:
-  stage: deploy
+deploy-develop:
+  stage: deploy-develop
   script:
-    - dpl --provider=heroku --app=$HEROKU_APP --api-key=$HEROKU_API_KEY
+    - dpl --provider=heroku --app=$HEROKU_DEVELOP_APP --api-key=$HEROKU_API_KEY
+  only:
+    - develop
+
+deploy-production:
+  stage: deploy-production
+  script:
+    - dpl --provider=heroku --app=$HEROKU_PRODUCTION_APP --api-key=$HEROKU_API_KEY
   only:
     - master
