@@ -1,0 +1,37 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2019-03-01T03:13:47.398Z",
+	"__export_source": "insomnia.desktop.app:v5.16.6",
+	"resources": [
+		{
+			"_id": "wrk_d52f6932dcc548d6ac98065f4718e144",
+			"created": 1551409952411,
+			"description": "",
+			"modified": 1551409952411,
+			"name": "Battlesnake",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_670c927cacf2480290784c7cfe06058e",
+			"color": null,
+			"created": 1551409952850,
+			"data": {},
+			"isPrivate": false,
+			"modified": 1551409952850,
+			"name": "New Environment",
+			"parentId": "wrk_d52f6932dcc548d6ac98065f4718e144",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_06edfa68ed5e4050a74f951fcfea2831",
+			"cookies": [],
+			"created": 1551409952861,
+			"modified": 1551409952861,
+			"name": "Default Jar",
+			"parentId": "wrk_d52f6932dcc548d6ac98065f4718e144",
+			"_type": "cookie_jar"
+		}
+	]
+}
