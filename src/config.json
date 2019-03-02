@@ -1,3 +1,5 @@
 {
-    "color": "#8C271E"
+    "color": "#8C271E",
+    "headType": "bendr",
+    "tailType": "pixel"
 }

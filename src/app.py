@@ -38,7 +38,9 @@ This is just slaps the snake awake
 def start():
     print(request.get_json())
     color = config['color']
-    return start_response(color)
+    headType = config['headType']
+    tailType = config['tailType']
+    return start_response(color, headType, tailType)
 
 """
 This is called whenever the server wants our next move

@@ -18,11 +18,15 @@ def ping_response():
 """
 Set the snake's color, let the server know we're alive
 """
-def start_response(color):
+def start_response(color, headType, tailType):
     assert type(color) is str, \
         "Color value must be string, not a difficult concept."
 
-    return make_response({"color": color})
+    return make_response({
+        "color": color
+        "headType": headType,
+        "tailType": tailType
+    })
 
 """
 Respond with a valid move
