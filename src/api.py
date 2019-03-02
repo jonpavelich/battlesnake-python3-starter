@@ -1,13 +1,11 @@
 from flask import Response
 import json
 
-
 """
 Formats the response string to include status and content type
 """
 def make_response(content, status=200, headers={"Content-type": "application/json"}):
     return (json.dumps(content), status, headers)
-
 
 """
 Returns 200, lets the server know we're here
@@ -34,7 +32,6 @@ def move_response(move):
         "Move must be one of [up, down, left, right], this is a 2d snake."
 
     return make_response({"move": move})
-
 
 """
 Just let the server know we're OK with the game being over
