@@ -47,7 +47,6 @@ It's where the magic happens
 @app.route('/move')
 def move():
     data = request.get_json()
-    print(data)
     direction = choose_move(data)
     return move_response(direction)
 
