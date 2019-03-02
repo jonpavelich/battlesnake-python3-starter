@@ -32,7 +32,7 @@ def ping():
 
 """
 Our snake has a very small brain so it's stateless
-This is just a quick heads-up that the game is starting
+This is just slaps the snake awake
 """
 @app.route('/start')
 def start():
