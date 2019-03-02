@@ -13,6 +13,9 @@ This AI client uses [Flask](http://flask.pocoo.org/) to serve requests and the [
 * [virtualenv](https://virtualenv.pypa.io/en/stable/installing/) to contain the dependencies
 * experience [deploying Python apps to Heroku](https://devcenter.heroku.com/articles/getting-started-with-python#introduction)
 
+## Building a Snake
+Write your snake code in [src/snake.py](https://github.com/jonpavelich/battlesnake-python3-starter/blob/master/src/snake.py)
+
 ## Running the Snake Locally
 
 1) [Fork this repo](https://github.com/jonpavelich/battlesnake-python3-starter/fork).
@@ -45,13 +48,13 @@ venv/Scripts/activate.bat
 pip install -r requirements.txt
 ```
 
-4) Run local server:
+6) Run local server:
 ```
 cd src
 python app.py
 ```
 
-5) Test your snake by sending a curl to the running snake
+7) Test your snake by sending a curl to the running snake
 ```
 curl -XPOST -H 'Content-Type: application/json' -d '{ "hello": "world"}' http://localhost:5000/start
 ```
