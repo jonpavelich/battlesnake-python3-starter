@@ -23,7 +23,7 @@ def start_response(color, headType, tailType):
         "Color value must be string, not a difficult concept."
 
     return make_response({
-        "color": color
+        "color": color,
         "headType": headType,
         "tailType": tailType
     })
