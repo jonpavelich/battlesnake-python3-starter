@@ -11,14 +11,14 @@ app = Flask(__name__)
 """
 Check the vitals
 """
-@app.route('/')
+@app.route('/', methods = ['GET', 'POST'])
 def route_root():
     return "I'm a snake, and I have good grammar."
 
 """
 Serve a static file for the snake head image
 """
-@app.route('/static/<path:path>')
+@app.route('/static/<path:path>', methods = ['GET', 'POST'])
 def send_static(path):
     return send_from_directory('static', path)
 
@@ -26,7 +26,7 @@ def send_static(path):
 This keeps the snake alive, in case of Heroku
 taking an early coffee break.
 """
-@app.route('/ping')
+@app.route('/ping', methods = ['GET', 'POST'])
 def ping():
     return ping_response()
 
@@ -34,7 +34,7 @@ def ping():
 Our snake has a very small brain so it's stateless
 This is just slaps the snake awake
 """
-@app.route('/start')
+@app.route('/start', methods = ['GET', 'POST'])
 def start():
     print(request.get_json())
     color = config['color']
@@ -46,7 +46,7 @@ def start():
 This is called whenever the server wants our next move
 It's where the magic happens
 """
-@app.route('/move')
+@app.route('/move', methods = ['GET', 'POST'])
 def move():
     data = request.get_json()
     direction = choose_move(data)
@@ -55,7 +55,7 @@ def move():
 """
 Just responds with 200 to let the server know it's All Good In The Hood
 """
-@app.route('/end')
+@app.route('/end', methods = ['GET', 'POST'])
 def end():
     data = request.get_json()
     print(json.dumps(data))
