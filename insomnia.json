@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2019-03-01T04:38:38.308Z",
+	"__export_date": "2019-03-02T04:49:25.917Z",
 	"__export_source": "insomnia.desktop.app:v6.3.2",
 	"resources": [
 		{
@@ -19,7 +19,7 @@
 			"created": 1551409952850,
 			"data": {},
 			"isPrivate": false,
-			"metaSortKey": 1551415118312,
+			"metaSortKey": 1551502165921,
 			"modified": 1551409952850,
 			"name": "New Environment",
 			"parentId": "wrk_d52f6932dcc548d6ac98065f4718e144",
@@ -67,7 +67,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1551411170024,
 			"method": "GET",
-			"modified": 1551412933138,
+			"modified": 1551499549854,
 			"name": "Ping",
 			"parameters": [],
 			"parentId": "wrk_d52f6932dcc548d6ac98065f4718e144",
@@ -108,7 +108,7 @@
 			"authentication": {},
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\t\n\t\"game\": {\n\t\t\"id\": \"game_id\"\t\n\t},\n\t\"turn\": \"0\"\n}\t"
+				"text": "{\t\n\t\"game\": {\n\t\t\"id\": \"game_id\"\t\n\t},\n\t\"turn\": \"0\"\n}\t\n"
 			},
 			"created": 1551412573059,
 			"description": "",
@@ -122,7 +122,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1551412573059,
 			"method": "GET",
-			"modified": 1551413099440,
+			"modified": 1551500019592,
 			"name": "Start",
 			"parameters": [],
 			"parentId": "wrk_d52f6932dcc548d6ac98065f4718e144",
@@ -133,6 +133,61 @@
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
 			"url": "localhost:5000/start",
+			"_type": "request"
+		},
+		{
+			"_id": "req_7459cc43657846cc9929d9673b1b219e",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\t\n\t\"game\": {\n\t\t\"id\": \"game_id\"\t\n\t},\n\t\"turn\": \"0\"\n}\t\n"
+			},
+			"created": 1551501573798,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_8667559f4e2e48efa7119a1c69c65e79",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1551501573798,
+			"method": "GET",
+			"modified": 1551501588945,
+			"name": "Move",
+			"parameters": [],
+			"parentId": "wrk_d52f6932dcc548d6ac98065f4718e144",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "localhost:5000/move",
+			"_type": "request"
+		},
+		{
+			"_id": "req_8e4b4efe192842568145426a087b28e3",
+			"authentication": {},
+			"body": {},
+			"created": 1551501673365,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1551501673365,
+			"method": "GET",
+			"modified": 1551501677863,
+			"name": "End",
+			"parameters": [],
+			"parentId": "wrk_d52f6932dcc548d6ac98065f4718e144",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "localhost:5000/end",
 			"_type": "request"
 		}
 	]
