@@ -1,5 +1,6 @@
 from flask import Flask, Response, request, send_from_directory
-from api import ping_response, start_response
+from api import ping_response, start_response, move_response, end_response
+import random
 import json
 
 app = Flask(__name__)
@@ -29,13 +30,42 @@ def ping():
 """
 Our snake has a very small brain so it's stateless
 This is just a quick heads-up that the game is starting
-JON ADD A CONFIG FILE
 """
 @app.route('/start')
 def start():
-    print(json.dumps(request.data))
+    print(request.get_json())
     color = "#8C271E"
     return start_response(color)
+
+"""
+This is called whenever the server wants our next move
+It's where the magic happens
+"""
+@app.route('/move')
+def move():
+    data = request.get_json()
+    print(data)
+
+    """
+    TODO: Using the data from the endpoint request object, your
+            snake AI must choose a direction to move in.
+    """
+
+    directions = ['up', 'down', 'left', 'right']
+    direction = random.choice(directions)
+
+    return move_response(direction)
+
+
+"""
+Just responds with 200 to let the server know it's All Good In The Hood
+"""
+@app.route('/end')
+def end():
+    data = request.get_json()
+    print(json.dumps(data))
+
+    return end_response()
 
 """
 This is the main function, for arcane reasons
