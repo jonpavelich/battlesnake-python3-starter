@@ -5,7 +5,7 @@ import json
 config = get_config()
 
 """
-This function decides on priorities and makes a decision about what to do
+TODO: Write your snake logic here. See sample data argument below.
 """
 def choose_move(data):
     print(data)
@@ -13,7 +13,7 @@ def choose_move(data):
     return random.choice(directions)
 
 """
-Sample Data:
+Sample data:
 {
   "game": {
     "id": "game-id-string"
