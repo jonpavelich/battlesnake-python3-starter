@@ -2,19 +2,29 @@ before_script:
   - gem install dpl
 
 stages:
-  - deploy-develop
-  - deploy-production
+  - deploy
+  - health-test
 
 deploy-develop:
-  stage: deploy-develop
+  stage: deploy
   script:
     - dpl --provider=heroku --app=$HEROKU_DEVELOP_APP --api-key=$HEROKU_API_KEY
   only:
     - develop
 
 deploy-production:
-  stage: deploy-production
+  stage: deploy
   script:
     - dpl --provider=heroku --app=$HEROKU_PRODUCTION_APP --api-key=$HEROKU_API_KEY
   only:
     - master
+
+health-test-develop:
+  stage: health-test
+  script:
+    - if [ "$(curl -s -o /dev/null -w "%{http_code}" https://battlesnake-develop.herokuapp.com)" == "200" ]; then echo Success; else echo Failure; exit 1; fi
+
+health-test-master:
+  stage: health-test
+  script:
+    - if [ "$(curl -s -o /dev/null -w "%{http_code}" https://battlesnake-production.herokuapp.com)" == "200" ]; then echo Success; else echo Failure; exit 1; fi
